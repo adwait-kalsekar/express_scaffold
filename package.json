@@ -1,0 +1,11 @@
+{
+  "name": "express_scaffold",
+  "version": "1.0.0",
+  "description": "A Professional Express App Structure to start your express projects instantly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "adwait-kalsekar",
+  "license": "ISC"
+}
