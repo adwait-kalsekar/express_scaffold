@@ -33,6 +33,6 @@ import userRouter from './routes/user.routes.js';
 
 //Routes Declaration
 app.use('/health', healthRouter);
-app.use('/users', userRouter);
+app.use('/api/v1/users', userRouter);
 
 export default app;

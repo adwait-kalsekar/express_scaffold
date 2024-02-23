@@ -7,7 +7,7 @@ import {
   ACCESS_TOKEN_EXPIRY,
   REFRESH_TOKEN_SECRET,
   REFRESH_TOKEN_EXPIRY,
-} from '../utils/constants';
+} from '../utils/constants.js';
 
 const userSchema = mongoose.Schema(
   {
@@ -33,10 +33,6 @@ const userSchema = mongoose.Schema(
       index: true,
     },
     avatar: {
-      type: String, // upload URL
-      required: true,
-    },
-    coverImage: {
       type: String, // upload URL
     },
     password: {
