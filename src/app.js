@@ -2,21 +2,21 @@ import express from 'express';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 
-import { CORS_ORIGIN } from './utils/constants';
+import { CORS_ORIGIN } from './utils/constants.js';
 
 const app = express();
 
 // Middlewares
-corsOptions = {
+const corsOptions = {
   origin: CORS_ORIGIN,
   credentials: true,
 };
 
-jsonOptions = {
+const jsonOptions = {
   limit: '16kb',
 };
 
-urlencodedOptions = {
+const urlencodedOptions = {
   extended: true,
   limit: '16kb',
 };
@@ -26,5 +26,13 @@ app.use(express.json(jsonOptions));
 app.use(express.urlencoded(urlencodedOptions));
 app.use(express.static('public'));
 app.use(cookieParser());
+
+// Routes Import
+import healthRouter from './routes/health.routes.js';
+import userRouter from './routes/user.routes.js';
+
+//Routes Declaration
+app.use('/health', healthRouter);
+app.use('/users', userRouter);
 
 export default app;
